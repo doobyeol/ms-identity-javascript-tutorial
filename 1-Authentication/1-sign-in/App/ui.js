@@ -8,6 +8,7 @@ const footerDiv = document.getElementById('footer');
 const tableBody = document.getElementById('table-body-div');
 
 function welcomeUser(username) {
+    console.log('welcomeUser username : ', username);
     signInButton.classList.add('d-none');
     signOutButton.classList.remove('d-none');
     titleDiv.classList.add('d-none');

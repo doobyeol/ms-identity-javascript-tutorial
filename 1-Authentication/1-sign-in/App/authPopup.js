@@ -5,13 +5,14 @@ const myMSALObj = new msal.PublicClientApplication(msalConfig);
 let username = "";
 
 function selectAccount () {
-
+    console.log('popup selectAccount username : ', username);
     /**
      * See here for more info on account retrieval: 
      * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-common/docs/Accounts.md
      */
 
     const currentAccounts = myMSALObj.getAllAccounts();
+    console.log('currentAccounts : ', currentAccounts);
 
     if (!currentAccounts  || currentAccounts.length < 1) {
         return;
@@ -26,7 +27,8 @@ function selectAccount () {
 }
 
 function handleResponse(response) {
-
+    console.log('popup handleResponse username : ', username);
+    console.log('popup handleResponse response : ', response);
     /**
      * To see the full list of response object properties, visit:
      * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#response

@@ -16,6 +16,7 @@ myMSALObj.handleRedirectPromise()
     });
 
 function selectAccount () {
+    console.log('selectAccount username : ', username);
 
     /**
      * See here for more info on account retrieval: 
@@ -37,6 +38,8 @@ function selectAccount () {
 }
 
 function handleResponse(response) {
+    console.log('handleResponse username : ', username);
+    console.log('handleResponse response : ', response);
 
     /**
      * To see the full list of response object properties, visit:
@@ -80,6 +83,7 @@ function signIn() {
      */
 
     myMSALObj.loginRedirect(loginRequest);
+    console.log('signIn username : ', username);
 }
 
 function signOut() {

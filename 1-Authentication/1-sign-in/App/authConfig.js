@@ -6,15 +6,19 @@
 
 const msalConfig = {
   auth: {
-    clientId: "Enter_the_Application_Id_Here", // This is the ONLY mandatory field that you need to supply.
-    authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here", // Defaults to "https://login.microsoftonline.com/common"
-    redirectUri: "Enter_the_Redirect_Uri_Here", // You must register this URI on Azure Portal/App Registration. Defaults to window.location.href
-    postLogoutRedirectUri: "Enter_the_Redirect_Uri_Here/signout", // Simply remove this line if you would like navigate to index page after logout.
+    clientId: "", 
+    // This is the ONLY mandatory field that you need to supply.
+    authority: "https://login.microsoftonline.com/common", 
+    // Defaults to "https://login.microsoftonline.com/common"
+    redirectUri: "http://localhost:3000/gscaltex", 
+    // You must register this URI on Azure Portal/App Registration. Defaults to window.location.href
+    postLogoutRedirectUri: "http://localhost:3000/gscaltex", 
+    // Simply remove this line if you would like navigate to index page after logout.
     navigateToLoginRequestUrl: false, // If "true", will navigate back to the original request location before processing the auth code response.
   },
   cache: {
     cacheLocation: "localStorage", // Configures cache location. "sessionStorage" is more secure, but "localStorage" gives you SSO.
-    storeAuthStateInCookie: false, // If you wish to store cache items in cookies as well as browser cache, set this to "true".
+    storeAuthStateInCookie: true, // If you wish to store cache items in cookies as well as browser cache, set this to "true".
   },
   system: {
     loggerOptions: {
